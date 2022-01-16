@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
-const port = 3080;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 const os = require("os");
 const hostname = os.hostname();
 const path = require('path');
